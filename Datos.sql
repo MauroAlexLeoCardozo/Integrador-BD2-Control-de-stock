@@ -70,3 +70,27 @@ VALUES
 -- Ana (Mantenimiento y limpieza, Operario, Operativo)
 (5, 4, 1, 1, 1);
 GO
+
+insert into Ingreso (IDInsumo, IDProveedor, Precio, Cantidad, CantDisponible, Fecha, Estado)
+values
+(1, 1, 4500.00, 20, 18, '2026-07-01', 1), 
+(2, 2, 1500.00, 10, 10, '2026-07-05', 1), 
+(3, 1, 3000.00, 15, 15, '2026-07-10', 1),
+(4, 2, 4600.00, 10, 10, '2026-07-02', 1), 
+(5, 1, 800.00, 50, 45, '2026-07-08', 1);
+GO
+
+INSERT INTO Consumo (IDInsumo, IDSolicitante, IDAprobador, Cantidad, CostoTotal, Fecha, Estado) 
+VALUES 
+(1, 2, 1, 2, 9000.00, '2026-07-15', 1),
+(2, 2, NULL, 1, 0.00, '2026-07-16', 1),
+(5, 3, 4, 5, 4000.00, '2026-07-17', 1),
+(4, 5, NULL, 2, 0.00, '2026-07-18', 1);
+GO
+
+UPDATE Insumo SET Stock = 18 WHERE ID = 1;
+UPDATE Insumo SET Stock = 10 WHERE ID = 2;
+UPDATE Insumo SET Stock = 15 WHERE ID = 3;
+UPDATE Insumo SET Stock = 10 WHERE ID = 4;
+UPDATE Insumo SET Stock = 45 WHERE ID = 5;
+GO
